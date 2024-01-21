@@ -1,0 +1,139 @@
+{
+  "navbar": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "search": "Search",
+    "dashboard": "Dashboard",
+    "logout": "Log out"
+  },
+  "hero": {
+    "title1": "Welcome to",
+    "title2": ", the website of a friendly and reliable of books and post-stamps. Whether you are looking for a new adventure, a classic story, or a rare treasure, you will find something to suit your taste and budget here. Browse through our collection of new and used books and post-stamps in various genres and themes, from fiction and non-fiction to history and art. You can also search by author, title, or keyword to find exactly what you are looking for."
+  },
+  "latestItems": {
+    "title": "Added recently",
+    "addedBy": "Added by",
+    "on": "on"
+  },
+  "largestCollections": {
+    "title": "Largest Collections",
+    "volume": "Volume",
+    "view": "View"
+  },
+  "footer": {
+    "title": "This website created by"
+  },
+  "login": {
+    "title": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "noAccount": "Don't have an account? Sign Up"
+  },
+  "signup": {
+    "title": "Sign up",
+    "email": "Email Address",
+    "name": "Your name",
+    "password": "Password",
+    "password2": "Re-enter password",
+    "haveAccount": "Already have an account? Sign in"
+  },
+  "dashboard": {
+    "users": "Users Dashboard",
+    "categories": "Categories Dashboard",
+    "collections": "Collections Dashboard",
+    "items": "Items Dashboard"
+  },
+  "usersDashboard": {
+    "block": "Block",
+    "unBlock": "unBlock",
+    "delete": "delete",
+    "makeAnAdmin": "Make an admin",
+    "removeAdmin": "Remove Admin",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "registeredTime": "Registered Time",
+    "lastLoginTime": "Last Login Time",
+    "status": "Status",
+    "deletedMessage": "The selected users have been deleted",
+    "blockedMessage": "The selected users have been blocked",
+    "unBlockedMessage": "Selected users are unblocked",
+    "makeAdminMessage": "Selected users have become admins",
+    "removeAdminMessage": "Selected users have been removed from admin"
+  },
+  "categoriesDashboard": {
+    "categoryName": "Category name",
+    "name": "Name",
+    "en": "English",
+    "uz": "Uzbek",
+    "newCategory": "New category",
+    "editCategory": "Edit category",
+    "deletedMessage": "The selected categories have been deleted",
+    "createdMessage": "The selected categories have been added",
+    "editedMessage": "The selected categorie have been edited",
+    "fieldsTwoCharacter": "Fields must be at least 2 characters"
+  },
+  "collectionsDashboard": {
+    "volume": "Volume",
+    "name": "Name",
+    "collection": "Collection",
+    "desc": "Description",
+    "owner": "Owner",
+    "category": "Category",
+    "selectCategory": "Select category",
+    "description": "Description",
+    "publishedAt": "Created on",
+    "newCollection": "New Collection",
+    "editCollection": "Edit Collection",
+    "viewCollection": "View Collection",
+    "imageInfo": "Image upload is optional. File must be an image and less than 5 MB",
+    "deletedMessage": "The selected collections have been deleted",
+    "createdMessage": "The selected collections have been added",
+    "editedMessage": "The selected collection have been edited",
+    "fieldsTwoCharacter": "Fields must be at least 2 characters"
+  },
+  "itemsDashboard": {
+    "item": "Item",
+    "newItem": "New item",
+    "editItem": "Edit Item",
+    "viewItem": "View Item",
+    "collection": "Collection",
+    "tags": "Tags",
+    "name": "Name",
+    "category": "Category",
+    "selectCategory": "Select category",
+    "selectCollection": "Select Collection",
+    "description": "Description",
+    "deletedMessage": "The selected items have been deleted",
+    "createdMessage": "The selected items have been added",
+    "editedMessage": "The selected item have been edited"
+  },
+  "itemId": {
+    "added": "Added",
+    "by": "by",
+    "comment": "Add a comment"
+  },
+  "collectionId": {
+    "name": "Name",
+    "tags": "Tags",
+    "createdOn": "Created on"
+  },
+  "exportToCsv": "Export to CSV",
+  "allCollections": "All Collections",
+  "allItems": "All Items",
+  "create": "Create",
+  "update": "Update",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "admin": "Admin",
+  "notAdmin": "not Admin",
+  "active": "Active",
+  "blocked": "Blocked",
+  "results": "Results",
+  "replies": "Replies",
+  "collectionItems": "Collection Items",
+  "somethingWentWrong": "Something went wrong!",
+  "author": "Author",
+  "createdOn": "Created on",
+  "category": "Category"
+}

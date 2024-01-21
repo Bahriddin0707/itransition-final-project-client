@@ -1,13 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;1,900&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-white dark:bg-black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  @apply max-w-[1200px] px-[15px] mx-auto;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  @apply text-black dark:text-white;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  @apply text-black dark:text-white;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  @apply text-black dark:text-white;
+}
+h3,
+span,
+li {
+  @apply text-black dark:text-white;
+}
+input {
+  @apply dark:!text-white border-2 !border-white;
+}
+
+.login-input {
+  @apply dark:!border-[2px] dark:!border-[#3b82f6] dark:!border-solid;
+  z-index: 1 !important;
+  border-radius: 5px;
+}
+.hero {
+  height: 100vh;
+  background: url("./assets/images/hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero-box {
+  height: calc(100vh - 80px);
+}
+.data-grid input {
+  @apply dark:!text-black;
+}
+.data-grid p,
+.data-grid span,
+.data-grid input {
+  @apply dark:text-[#676767];
+}
+.MuiDataGrid-menu span,
+.MuiDataGrid-panelContent span {
+  @apply dark:text-[#676767];
+}
+.send-comment {
+  @apply dark:text-white border-2 border-black dark:border-white;
+}
+.category-input {
+  @apply dark:text-white border-2 border-black dark:border-white;
+}
+
+.ql-picker-options span,
+.ql-picker-label span {
+  color: black;
+}
+.category-input .MuiSvgIcon-root {
+  @apply dark:text-white;
+}
+.custom-free-solo {
+  @apply dark:border-2 dark:border-white;
+}
+.custom-free-solo .MuiSvgIcon-root,
+.custom-free-solo label {
+  @apply dark:text-white;
+}
+.MuiAutocomplete-popper li {
+  @apply dark:text-black;
+}
+
+.fields-form input {
+  width: 300px;
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red !important;
+}
+.custom-field-textarea {
+  @apply dark:text-white border-2 border-black dark:border-white dark:bg-black;
+}
+.custom-field-textarea:focus {
+  outline: transparent;
+}
+.date-field {
+  @apply bg-white dark:bg-black cursor-pointer dark:!border-[2px] dark:!border-white border-solid !border-black;
+}
+.date-field::-webkit-calendar-picker-indicator {
+  @apply !bg-white;
 }
