@@ -15,6 +15,7 @@ import { switchLang } from "../../store/languageSlice";
 import { clearUser } from "../../store/userSlice";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -61,6 +62,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     borderRadius: 20 / 2,
   },
 }));
+
 const Navbar = () => {
   const { navData, selectedLang } = useSelector((state) => state.language);
   const { user } = useSelector((state) => state.user);
@@ -70,6 +72,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [showSelect, setShowSelect] = useState(false);
   const [searchText, setSearchText] = useState("");
+
   const changeTheme = (val) => {
     val
       ? localStorage.setItem("theme", "dark")
@@ -84,44 +87,54 @@ const Navbar = () => {
       document.documentElement.classList.remove("dark");
     }
   };
+
   const onSelectClick = (id) => {
     dispatch(switchLang(navData[id - 1]));
     setShowSelect(false);
   };
+
   const searchHandle = () => {
     if (searchText?.trim()?.length > 0) {
       setNav(false);
       navigate(`/search/search=${searchText}`);
     }
   };
+
   const handleKeyDownSearchText = (e) => {
     if (e.key === "Enter") {
       searchHandle();
     }
   };
+
   const gotoDashboard = () => {
     navigate("/dashboard");
   };
+
   const handleLogout = () => {
     dispatch(clearUser());
     navigate("/");
   };
+
   const getEmptySearchText = () => {
     setSearchText("");
   };
+
   const openMenu = () => {
     setNav(true);
   };
+
   const closeMenu = () => {
     setNav(false);
   };
+
   useEffect(() => {
     if (localStorage?.getItem("lang") === "uz") {
       dispatch(switchLang(navData[1]));
     } else {
       dispatch(switchLang(navData[0]));
     }
-  }, []);
+  }, [dispatch, navData]);
+
   return (
     <div className="navbar bg-white dark:bg-black w-full h-[80px] flex justify-center items-center fixed z-20 border-b-[1px] border-green-500">
       <div className="container">

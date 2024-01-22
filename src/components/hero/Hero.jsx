@@ -11,7 +11,7 @@ const Hero = () => {
             <p className="text-2xl text-center font-bold max-sm:text-xl ">
               {t("hero.title1")}{" "}
               <span className="text-4xl max-sm:text-2xl">
-                Collections Manager
+                Collection management website
               </span>
               {t("hero.title2")}
             </p>

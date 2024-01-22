@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Card } from "../index";
 import { useTranslation } from "react-i18next";
 import noImage from "../../assets/images/no-image.jpg";
@@ -13,7 +13,8 @@ const LatestItems = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
-  const getData = async () => {
+
+  const getData = useCallback(async () => {
     dispatch(start());
     try {
       const { data: data1 } = await axios({
@@ -31,10 +32,12 @@ const LatestItems = () => {
       console.log(err);
       dispatch(done());
     }
-  };
+  }, [dispatch]);
+
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
+
   return (
     <section className="latestItems w-full py-20 bg-white dark:bg-black max-sm:pb-10">
       <div className="container">

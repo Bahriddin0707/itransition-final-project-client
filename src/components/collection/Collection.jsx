@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { DashboardItems } from "../../components";
 import { useDispatch } from "react-redux";
 import { GET_COLLECTION } from "../../constant";
@@ -17,7 +17,7 @@ const Collection = () => {
   const { t } = useTranslation();
   const [data, setData] = useState([]);
 
-  const getData = async () => {
+  const getData = useCallback(async () => {
     dispatch(start());
     try {
       const { data: data1 } = await axios({
@@ -35,10 +35,12 @@ const Collection = () => {
       console.log(err);
       dispatch(done());
     }
-  };
+  }, [id, dispatch]);
+
   useEffect(() => {
     getData();
-  }, [id]);
+  }, [getData]);
+
   return (
     <div className="collection bg-white dark:bg-black pt-20">
       <div className="container">

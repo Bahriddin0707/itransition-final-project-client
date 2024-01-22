@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link, useParams } from "react-router-dom";
 import userImg from "../../assets/images/user-img.jpg";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -21,7 +21,8 @@ const Item = () => {
   const [isLike, setIsLike] = useState(false);
   const [commentText, setCommentText] = useState("");
   const [extraFields, setExtraFields] = useState([]);
-  const getData = async () => {
+
+  const getData = useCallback(async () => {
     dispatch(start());
     try {
       const { data: data1 } = await axios({
@@ -49,7 +50,8 @@ const Item = () => {
       console.log(err);
       dispatch(done());
     }
-  };
+  }, [dispatch, id]);
+
   const getLike = async () => {
     try {
       const { data } = await axios({
@@ -69,6 +71,7 @@ const Item = () => {
       console.log(err);
     }
   };
+
   const sendComment = async () => {
     dispatch(start());
     try {
@@ -85,6 +88,7 @@ const Item = () => {
           comment: commentText,
         },
       });
+
       getData();
       dispatch(done());
       setCommentText("");
@@ -93,9 +97,11 @@ const Item = () => {
       dispatch(done());
     }
   };
+
   const handleLike = () => {
     getLike();
   };
+
   const handleSendComment = () => {
     if (commentText.trim().length !== 0) {
       sendComment();
@@ -104,11 +110,12 @@ const Item = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   useEffect(() => {
     setIsLike(data?.likes?.includes(user?._id));
-  }, [data]);
+  }, [user?._id, data?.likes]);
+
   return (
     <div className="item pt-20 dark:bg-black">
       <div className="container">

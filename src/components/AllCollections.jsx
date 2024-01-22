@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { done, start } from "../store/loaderSlice";
 import axios from "axios";
@@ -21,7 +21,8 @@ const AllCollections = () => {
   const handlePageChange = (event, selectedPage) => {
     setCurrentPage(selectedPage);
   };
-  const getData = async () => {
+
+  const getData = useCallback(async () => {
     dispatch(start());
     try {
       const { data: data1 } = await axios({
@@ -41,10 +42,12 @@ const AllCollections = () => {
       console.log(err);
       dispatch(done());
     }
-  };
+  }, [dispatch]);
+
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
+
   return (
     <section className="pt-20">
       <div className="container">

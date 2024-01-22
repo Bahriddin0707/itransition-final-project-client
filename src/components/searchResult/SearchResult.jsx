@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { GET_ITEMS } from "../../constant";
 import { Card } from "../index";
@@ -14,7 +14,8 @@ const SearchResult = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
-  const getData = async () => {
+
+  const getData = useCallback(async () => {
     dispatch(start());
     try {
       const { data: data1 } = await axios({
@@ -32,10 +33,12 @@ const SearchResult = () => {
       console.log(err);
       dispatch(done());
     }
-  };
+  }, [id, dispatch]);
+
   useEffect(() => {
     getData();
-  }, [id]);
+  }, [getData]);
+
   return (
     <section className="search-result pt-20">
       <div className="container">

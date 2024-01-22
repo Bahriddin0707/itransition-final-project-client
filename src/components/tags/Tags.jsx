@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { GET_TAGS } from "../../constant";
 import axios from "axios";
@@ -13,7 +13,8 @@ const Tags = () => {
   const handleClick = (tag) => {
     navigate(`/search/tag=${tag}`);
   };
-  const getData = async () => {
+
+  const getData = useCallback(async () => {
     dispatch(start());
     try {
       const { data: data1 } = await axios({
@@ -31,10 +32,12 @@ const Tags = () => {
       console.log(err);
       dispatch(done());
     }
-  };
+  }, [dispatch]);
+
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
+
   return (
     <section className="tags w-full bg-white dark:bg-black pt-20 max-sm:pt-10">
       <div className="container">
